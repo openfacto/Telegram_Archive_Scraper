@@ -1,11 +1,11 @@
-#Telegram_Archive_Scraper
+# Telegram_Archive_Scraper
 
 A simple Python script to parse a Telegram archive and export it a a csv file.
 
 Source : https://openfacto.fr/2020/05/27/export-de-telegram-au-format-csv-introduction-a-beautifsoup/
 
 
-##How to use
+## How to use
 
 Export your Telegram conversation/group as an HTML file using the desktop version of Telegram.
 https://desktop.telegram.org/
