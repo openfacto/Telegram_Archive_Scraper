@@ -29,11 +29,16 @@ for html_file in os.listdir(directory):
             row.append(msg.find("div", {"class": "from_name"}).text.strip())
 
             # Message
-            date_msg = msg.find("div", {"class": "text"}).text
-            if ": " in date_msg:
-                msg_alone = date_msg.split(": ")[1].strip()
+            date_msg = msg.find("div", {"class": "text"})
+            if date_msg:
+                date_msg_text = date_msg.text
+                if ": " in date_msg_text:
+                    msg_alone = date_msg_text.split(": ")[1].strip()
+                else:
+                    msg_alone = date_msg_text.strip()
             else:
-                msg_alone = date_msg.strip()
+                # Si pas de message texte, il s'agit d'une image/video/autre
+                msg_alone = ""
             row.append(msg_alone)
 
             output_rows.append(row)
